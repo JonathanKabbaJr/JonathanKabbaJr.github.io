@@ -21,11 +21,13 @@ body {
 h1, h2, h3 {
   font-family: 'Comfortaa', cursive;
   color: #2a2a2a;
+  font-weight: normal;
 }
 
 p, input, li {
   font-family: 'Roboto Condensed', sans-serif;
   color: #2a2a2a;
+  font-weight: normal;
 }
 
 h1 {
