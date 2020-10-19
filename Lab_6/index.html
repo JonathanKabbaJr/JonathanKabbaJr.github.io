@@ -5,8 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/form_styles.css">
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+
+<style>   
+form {
     
+    margin: 0 auto;
+    width: 400px;
+    padding: 1em;
+    border-radius: 1em;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  form li + li {
+    margin-top: 1em;
+  }
+  
+  
+  
+  input, 
+  textarea {
+    
+    font: 1em sans-serif;
+  
+    
+    width: 300px;
+    box-sizing: border-box;
+  
+    
+    border: 1px solid #999;
+  }
+  
+  input:focus, 
+  textarea:focus {
+   
+    border-color: #000;
+  }
+  
+  textarea {
+    
+    vertical-align: top;
+  
+    
+    height: 5em;
+  }
+
+  
+  button {
+    
+    margin-left: .5em
+  }
+  
+</style>
+</head>
+
+
+<body>
+    <h1 class="heading">
+        HTML Froms Lab
+    </h1>
+    <form action="https://fierce-taiga-97625.herokuapp.com/lab" method="post">
+        <ul>
+         <li>
+           <label for="name">Name:</label></br>
+           <input type="text" id="name" name="user_name" value="Jonathan Kabba Jr." maxlength="140">
+         </li>
+         <li>
+           <label for="mail">E-mail:</label></br>
+           <input type="email" id="mail" name="user_email">
+         </li>
+         <li>
+           <label for="int">Interests:</label></br>
+           <textarea id="msg" class="textArea" name="user_message" rows="5" cols="33">
+
+             My career interests involve UX/UI Design, Data Analysis, and Cybersecurity. With that being said
+             my hobbie interests involve phtography, drawing, hiking, and road trips. 
+           </textarea>
+         </li>
+
+         <li class="button">
+            <button type="submit">Submit</button>
+          </li>
+        </ul>
+       </form>
 </body>
 </html>
