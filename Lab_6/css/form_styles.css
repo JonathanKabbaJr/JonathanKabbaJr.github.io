@@ -1,0 +1,32 @@
+
+button{
+    background-color: #f59927;
+}
+
+body{
+    text-align: center;
+    background-color: #f1cb9c;
+  }
+
+  .button{
+    text-align: left;
+  }
+
+  li{
+    text-align: left;
+  }
+
+.heading{
+    margin-right: 90px;
+    font-weight: 900;
+}
+label {
+    
+    display: inline-block;
+    text-align: right;
+    font-weight: 900;
+  }
+
+  .textArea{
+    font-family: 'Roboto Mono', monospace;
+  }
