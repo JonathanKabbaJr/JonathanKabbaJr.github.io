@@ -1,0 +1,14 @@
+{
+  "name": "kabba_lab8",
+  "version": "1.0.0",
+  "description": "Node Server for lab 8.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Jonathan Kabba",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
