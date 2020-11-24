@@ -14,7 +14,7 @@ router.post('/task', (req, res) => {
         name: req.body.taskName,
         dueDate: req.body.taskDueDate // Example 2020-11-24
     }
-    
+
     var sql ='INSERT INTO tasklist (taskName, dueDate) VALUES (?,?)'
     var params =[task.name, task.dueDate]
     db.run(sql, params, function (err, result) {
@@ -28,17 +28,17 @@ router.post('/task', (req, res) => {
             "id" : this.lastID
         })
     });
-    
+
 })
 
 //GET
 router.get('/task', (req, res) => {
-    if (!//TODO) {
+    if (!req.query.taskId) {
         return res.status(400).send('Missing URL parameter id')
     }
     let sql = "select * from tasklist where id = ?"
-    console.log("req.query.taskId: " + //TODO)
-    let params = [//TODO]
+    console.log("req.query.taskId: " + req.query.taskId)
+    let params = [req.query.taskId]
     db.get(sql, params, (err, row) => {
         if (err) {
           res.status(400).json({"error":err.message});
@@ -55,9 +55,9 @@ router.get('/task', (req, res) => {
 router.put('/task', (req, res) => {
     console.log("PUT called")
     var data = {
-        id : //TODO,
-        taskName: //TODO
-        
+        id : req.query.taskId,
+        taskName: req.body.taskName
+
     }
     console.log("data.id:" + data.id + " name:" + data.taskName)
     if (!data.id) {
@@ -82,7 +82,30 @@ router.put('/task', (req, res) => {
 })
 
 //Delete
-//TODO add entire DELETE method
+router.delete('/task', (req, res) => {
+    console.log("DELETE called")
+    var data = {
+        id : req.query.taskId
+    }
+    console.log("data.id:", data.id)
+    if (!data.id) {
+        return res.status(400).send('Missing URL parameter id')
+    }
+    db.run(
+        `DELETE FROM tasklist
+           WHERE id = ?`,
+        [data.id],
+        function (err, result) {
+            if (err){
+                res.status(400).json({"error": res.message})
+                return;
+            }
+            res.json({
+                message: "deleted",
+                changes: this.changes
+            })
+        });
+})
 
 
 module.exports = router
