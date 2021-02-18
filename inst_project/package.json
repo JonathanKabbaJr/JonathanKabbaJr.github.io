@@ -1,0 +1,34 @@
+{
+  "name": "inst377_jedim",
+  "version": "1.0.0",
+  "description": "Market4Farmers: Connecting Farmers To Customers In Need",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "start-watch": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "JEDIM",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "sqlite3": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericTle1/inst377_jedim.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ericTle1/inst377_jedim/issues"
+  },
+  "homepage": "https://github.com/ericTle1/inst377_jedim#readme"
+}
